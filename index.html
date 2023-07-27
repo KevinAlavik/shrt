@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Redirect Page</title>
+    <script>
+        // Get the URL parameters
+        function getParams() {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get("url");
+        }
+
+        // Redirect to the specified URL
+        function redirectToUrl() {
+            var url = getParams();
+            if (url) {
+                window.location.href = url;
+            } else {
+                alert("No URL specified.");
+            }
+        }
+
+        // Redirect on page load
+        window.onload = redirectToUrl;
+    </script>
+</head>
+
+<body>
+    Redirecting...
+</body>
+
+</html>
